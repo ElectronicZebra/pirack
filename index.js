@@ -1,14 +1,17 @@
 //https://www.npmjs.com/package/oled-i2c-bus
 var ip = require("ip");
 var os = require("os");
+const { dirname } = require('path');
+const appDir = dirname(require.main.filename);
+//console.dir(appDir);
 const si = require('systeminformation');
 var i2c = require('i2c-bus'),
     i2cBus = i2c.openSync(1),
     oled = require('oled-i2c-bus');
 var font = require('oled-font-5x7');
 var fs = require('fs');
-var obj = JSON.parse(fs.readFileSync('settings.json', 'utf8'));
-console.dir(obj);
+var obj = JSON.parse(fs.readFileSync(appDir + '/settings.json', 'utf8'));
+//console.dir(obj);
 
 var opts = {
     width: 128,
