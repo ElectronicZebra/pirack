@@ -10,7 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "i2c-bus": "^5.2.3",
-    "oled-font-pack": "^1.0.1",
-    "oled-i2c-bus": "^1.0.12"
+    "oled-font-5x7": "^1.0.3",
+    "oled-i2c-bus": "^1.0.12",
+    "systeminformation": "^5.18.15"
   }
 }
