@@ -85,7 +85,7 @@ dispCPUInfo = function () {
             display.setCursor(1, 1);
             display.writeString(font, 2, 'CPU : ' + Math.round(data.currentLoad) + ' %', 1, false);
             display.setCursor(1, 18);
-            display.writeString(font, 2, 'IDLE : ' + Math.round(data.currentLoadIdle) + ' %', 1, false);
+            display.writeString(font, 2, 'IDL : ' + Math.round(data.currentLoadIdle) + ' %', 1, false);
         })
         .catch(error => console.error(error));
 }
@@ -107,9 +107,9 @@ dispDISKInfo = function () {
     si.fsSize()
         .then(function (data) {
             display.setCursor(1, 1);
-            display.writeString(font, 2, 'U : ' + (data[0].used / (1024 * 1024 * 1024)).toFixed(2) + 'G', 1, false);
+            display.writeString(font, 2, 'U : ' + (data[0].used / (1024 * 1024 * 1024)).toFixed(1) + 'G', 1, false);
             display.setCursor(1, 18);
-            display.writeString(font, 2, 'T : ' + (data[0].size / (1024 * 1024 * 1024)).toFixed(2) + 'G', 1, false);
+            display.writeString(font, 2, 'T : ' + (data[0].size / (1024 * 1024 * 1024)).toFixed(1) + 'G', 1, false);
         })
         .catch(error => console.error(error));
 }
